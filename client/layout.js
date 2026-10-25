@@ -13,7 +13,7 @@ export const layoutHTML = (list, items) =>
     `<button type="button" data-lay="del" data-list="${list}" data-i="${i}" aria-label="Remove">×</button></li>`).join("") +
   `</ol><div class="lay-add"><select id="lay-type-${list}" aria-label="Section type">` +
   SECTION_TYPES.map((t) => `<option>${t}</option>`).join("") +
-  `</select><button type="button" data-lay="add" data-list="${list}">Add</button></div>`;
+  `</select><button type="button" class="btn" data-lay="add" data-list="${list}">Add</button></div>`;
 
 const numbered = /^(Verse|Rap Verse)$/;
 export function nextTag(items, type) {

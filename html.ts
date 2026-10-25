@@ -5,8 +5,9 @@ export const shell = `<!doctype html><html lang="en"><head><meta charset="utf-8"
 <title>LYRICFIELD · Write</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-<style>${css}</style></head><body>
-<header class="top"><a href="/" class="brand">LYRICFIELD</a></header>
+<style>${css}</style><script>try{document.documentElement.dataset.z=localStorage.getItem("lf.z")||"1"}catch{}</script></head><body>
+<header class="top"><a href="/" class="brand">LYRICFIELD</a>
+<div class="zs" role="group" aria-label="Text size"><button type="button" data-z="1" aria-label="Normal text">A</button><button type="button" data-z="2" aria-label="Large text">A</button><button type="button" data-z="3" aria-label="Largest text">A</button></div></header>
 <form id="form">
 <textarea id="brief" aria-label="Song brief">A song about a grandmother teaching her grandson to drive stick on a Sunday in a church parking lot, told so a 9-year-old and a 90-year-old both laugh at the same line. Modern alt-rock with a rap burst.</textarea>
 <button id="go" type="submit">Write song</button>

@@ -71,6 +71,17 @@ $("#form").addEventListener("submit", async (e) => {
   if (v && n) await runAuto(v, { program: "adaptive", order: [], max: n, rounds: 1, accept: "same" }, paintAll);
 });
 
+// Text size: three steps, remembered per browser; every size in the UI is rem-based and follows it.
+const paintZ = () => { for (const b of document.querySelectorAll(".zs [data-z]")) b.setAttribute("aria-pressed", String(b.dataset.z === (document.documentElement.dataset.z || "1"))); };
+document.querySelector(".zs").addEventListener("click", (e) => {
+  const z = e.target.closest(".zs [data-z]")?.dataset.z;
+  if (!z) return;
+  document.documentElement.dataset.z = z;
+  ls.set("lf.z", z);
+  paintZ();
+});
+paintZ();
+
 $("#tasteOn").checked = taste.on;
 $("#tasteOn").addEventListener("change", (e) => { taste.on = e.target.checked; });
 let confirmForget = false;
